@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>权限验证</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+   <main>
+        <form class="form">
+            <div class="form__cover"></div>
+            <div class="form__loader">
+                <div class="spinner active">
+                    <svg class="spinner__circular" viewBox="25 25 50 50">
+                        <circle class="spinner__path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="10"></circle>
+                    </svg>
+                </div>
+            </div>
+            <div class="form__content">
+                <h1>Authorization</h1>
+                <div class="styled-input">
+                    <input type="text" class="styled-input__input" name="nickname" id="userNameId">
+                    <div class="styled-input__placeholder">
+                        <span class="styled-input__placeholder-text">Username</span>
+                    </div>
+                    <div class="styled-input__circle"></div>
+                </div><div class="styled-input">
+                     <input type="password" class="styled-input__input" id="pwdId">
+                    <div class="styled-input__placeholder">
+                        <span class="styled-input__placeholder-text">Password</span>
+                    </div>
+                    <div class="styled-input__circle"></div>
+                </div>
+                <button type="button" class="styled-button" onclick="validateLog()" id="submitId">
+                    <span class="styled-button__real-text-holder">
+                        <span class="styled-button__real-text">Submit</span>
+                        <span class="styled-button__moving-block face">
+                            <span class="styled-button__text-holder">
+                                <span class="styled-button__text">Submit</span>
+                            </span>
+                        </span><span class="styled-button__moving-block back">
+                            <span class="styled-button__text-holder">
+                                <span class="styled-button__text">Submit</span>
+                            </span>
+                        </span>
+                    </span>
+                </button>
+            </div>
+
+        </form>
+    </main>
+  
+    <script  src="js/index.js"></script>
+    <script type="text/javascript" src="js/crypto-js.js"></script>
+    <script type="text/javascript">
+    	function validateLog() {
+    		var pwd = document.getElementById('pwdId').value;
+    		var ciphertext = '96e9203b18cd0f84ca9445588bec9838f20b6967072d43599a2cd21eb182b336';
+    		if (pwd) {
+    			window.location.replace('http://www.yhf8.net');
+    		}
+    	}
+
+    	document.onkeydown = function (e) {
+            if (!e) e = window.event;
+            if ((e.keyCode || e.which) == 13) {
+            	validateLog();
+            }
+        }
+    </script>
+
+</body>
+</html>
